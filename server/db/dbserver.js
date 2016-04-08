@@ -26,7 +26,7 @@ if(!exists) {
       )");
 
     _.each(data, function(cafe){
-      addCafe(cafe.name.toLowerCase());
+      addCafe(cafe);
       cafe.menu.forEach(function(menu){
         var _item = {
           name: cafe.name.toLowerCase(),
@@ -49,8 +49,8 @@ function DBQuery(menuItemObj){
 }
 
 // takes a string
-function addCafe(cafeName, cb){
-  db.run("INSERT INTO cafes(name) VALUES(?)", [sqliteEscape(cafeName)], function(err){
+function addCafe(cafeObj, cb){
+  db.run("INSERT INTO cafes(name,address,phone) VALUES(?,?,?)", [sqliteEscape(cafeObj.name.toLowerCase()), sqliteEscape(cafeObj.address), sqliteEscape(cafeObj.phone)], function(err){
 		  if(err){
 		  	console.log('error inside addcafe: ', err);
 		  }
@@ -103,6 +103,8 @@ function getCafe(cafeName, cb){
 		}, function(err, numberOfRetrievedRows){
 			var cafeObj = {};
 			cafeObj.name = cafe.name;
+      cafeObj.phone = cafe.phone;
+      cafeObj.address = cafe.address;
 			cafeObj.menu = menu;
 			cb(cafeObj);
 		});

@@ -45,14 +45,14 @@ module.exports = {
   },
 
   addCafe: function(req, res){
-    var cafe = req.body ? req.body.cafe.name.toLowerCase() : null;
-    db.doesCafeExist(cafe, function(booler){
+    var cafe = req.body ? req.body.cafe : null;
+    db.doesCafeExist(cafe.name.toLowerCase(), function(booler){
       if(booler){
         res.status(400).send('That cafe already exists.');
       }
       else{
         db.addCafe(cafe, function(){
-          db.getCafe(cafe, function(cafeObj){
+          db.getCafe(cafe.name.toLowerCase(), function(cafeObj){
             res.status(200).send(JSON.stringify(cafeObj));
           });
         });
