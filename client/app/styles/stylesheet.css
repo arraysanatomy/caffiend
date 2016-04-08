@@ -53,3 +53,88 @@ text-shadow:
   font-size: 25px;
   font-weight: bold;
 }
+
+.tablehead{
+  font-weight: 350;
+}
+
+.cafeHead .contactItem .details{
+  font-weight: 600;
+}
+
+.wrapper{
+  border-width: 5px;
+  border-color: black;
+  /*background-color: red;*/
+}
+
+.contact{
+  margin-top: 20px;
+  background-color: rgba(228,203,172, 0.6);
+  border-radius: 10px;
+  padding-left: 7px;
+  padding-bottom: 3px;
+  padding-top: 1px;
+}
+
+.menuWrapper{
+  background-color: rgba(228,203,172, 0.6);
+  border-radius: 10px;
+  padding-left: 7px;
+}
+
+.menuItems{
+
+}
+
+.cafeHead{
+  /*background-color: blue;*/
+}
+
+#addDrinks{
+  float:right;
+  /*margin-right: 200px;*/
+  margin-left: auto;
+  width: 100px;
+  height: 40px;
+  /*background-color: yellow;*/
+  margin-top: 10px;
+}
+table  {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+
+
+.cafeHead #cafeName{
+  font-size: 40px;
+  /*background-color: red;*/
+   -webkit-text-stroke: .5px #30281e;
+  letter-spacing: .5px;
+  /*line-height: 44px;*/
+  /*padding: 40px 0 22px 0;*/
+  text-transform: capitalize;
+  font-weight: 400;
+/*text-shadow: 2px 2px 1px rgba(233, 234, 229, 0.8);*/
+/*text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;*/
+  text-shadow:
+    3px 3px 0 #b09069,
+   0px 0px 0 #b09069,
+    1px -1px 0 #b09069,
+   -1px  1px 0 #b09069,
+    1px  1px 0 #b09069;
+}
+
+.cafeHead button{
+  padding-bottom: auto;
+  margin-top: 10px;
+}
+
+.modal-body {
+  background-color: rgba(228,203,172, 0.6);
+}
+
+.modal-footer{
+  background-color: rgba(228,203,172, 0.6);
+}

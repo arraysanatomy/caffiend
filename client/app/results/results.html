@@ -1,5 +1,5 @@
 <div class='container'>
-<button ng-click='open()'>Add Drinks!</button>
+
 <!-- modal template -->
 <script id='modalContent.html' type='text/ng-template'>
     <div class="modal-body">
@@ -19,23 +19,31 @@
       <button class='btn btn-warning' type='button' ng-click='cancel()'>Cancel</button>
     </div> 
 </script>
-  <h2>{{cafeName}}</h2>
-  <address>
-    <div><strong>Address: </strong>{{address}}</div> 
-    <div><strong>Phone: </strong> {{phone}}</div>
-  </address>
-  <h3>Menu</h3>
-  <div ng-controller='WithOptionsCtrl as showCase'>
-  <table datatable='ng' dt-options='showCase.dtOptions' dt-column-defs='showCase.dtColumnDefs' class='row-border hover'>
-    <thead>
-    <tr><th>Name></th><th>Rating></th></tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat='menuItem in menu'>
-      <th><strong>Name:</strong> {{menuItem.item}}</th>  
-      <th><strong>Rating:</strong> {{menuItem.rating}} </th> 
-    </tr>
-    </tbody>
-  </table>
+<div class='wrapper'>
+  <div class='cafeHead'>
+    <span id='cafeName'>{{cafeName}}</span>
+    <span id='addDrinks'><button class='btn btn-primary' ng-click='open()'>Add Drinks!</button></span>
+    <div class='contact'>
+      <div class='contactItem'><h4>Address: </h4><span class='details'>{{address}}></span></div> 
+      <div class='contactItem'><h4>Phone: </h4><span class='details'>{{phone}}</span></div>
+    </div>
+  </div>
+  <div class='menuWrapper'>
+    <span class='menuHeader'><h3>Menu</h3></span>
+    <div >
+    <div class='menuItems' ng-controller='WithOptionsCtrl as showCase'>
+    <table datatable='ng' dt-options='showCase.dtOptions' dt-column-defs='showCase.dtColumnDefs' class='menu'>
+      <thead>
+      <tr><th>Name</th><th>Rating</th></tr>
+      </thead>
+      <tbody>
+      <tr class='menuItem' ng-repeat='menuItem in menu'>
+        <th>{{menuItem.item}}</th>  
+        <th> {{menuItem.rating}} </th> 
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
   </div>
 </div>
