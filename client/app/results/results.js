@@ -1,4 +1,11 @@
-var app = angular.module('mainApp.results',['ui.bootstrap']);
+var app = angular.module('mainApp.results',['ui.bootstrap','datatables']);
+
+//data table configuration
+app.controller('WithOptionsCtrl', function(DTOptionsBuilder, DTColumnDefBuilder){
+  var vm = this;
+  vm.dtOptions = DTOptionsBuilder.newOptions()
+    .withDOM('tr');
+ })
 
 app.controller('resultsController',function($scope, $uibModal){
 

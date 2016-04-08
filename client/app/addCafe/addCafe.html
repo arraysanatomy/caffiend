@@ -1,5 +1,19 @@
 <div class='container'>
   <h3>We can't find following cafe. Would you like add "{{cafe}}" to our site? </h3>
-  <input type='text' id='searchbox' ng-model='cafe' readonly >
-  <button id='searchButton' type='button' ng-click='addCafe()'>Add</button>
+  <form>
+    <center>
+      <input type='text' id='searchbox' ng-model='cafe' size='25' readonly>
+    </center>
+    <br><br>
+    <center>
+      <input type='text' id='address' placeholder='Address' size='25'>
+    </center>
+    <br><br>
+    <center>
+      <input type='text' id='phone' size='25' placeholder='Phone Number'>
+    </center>
+    <center>
+      <button id='searchButton' type='button' ng-click='addCafe()'>Add</button>
+    </center>
+  </form>
 </div>

@@ -5,7 +5,7 @@
     <div class="modal-body">
     <div ng-show='errorMessage'>{{errorMessage}}</div>
       <h4>Add Drink and Rating!</h4>
-      <input type='text' placeholder='new item' ng-model="beverage">
+      <input type='text' placeholder='New Item' ng-model="beverage">
       <select ng-model="rating">
         <option value='1'>1</option>
         <option value='2'>2</option>
@@ -25,10 +25,17 @@
     <div><strong>Phone: </strong> {{phone}}</div>
   </address>
   <h3>Menu</h3>
-  <table class='table table-striped'>
+  <div ng-controller='WithOptionsCtrl as showCase'>
+  <table datatable='ng' dt-options='showCase.dtOptions' dt-column-defs='showCase.dtColumnDefs' class='row-border hover'>
+    <thead>
+    <tr><th>Name></th><th>Rating></th></tr>
+    </thead>
+    <tbody>
     <tr ng-repeat='menuItem in menu'>
-      <td><strong>Name:</strong> {{menuItem.item}}</td>  
-      <td><strong>Rating:</strong> {{menuItem.rating}} </td> 
+      <th><strong>Name:</strong> {{menuItem.item}}</th>  
+      <th><strong>Rating:</strong> {{menuItem.rating}} </th> 
     </tr>
+    </tbody>
   </table>
+  </div>
 </div>
